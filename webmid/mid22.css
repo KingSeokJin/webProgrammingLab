@@ -1,0 +1,128 @@
+* { margin: 0px; padding: 0px; }
+
+li { list-style: none; }
+
+body {
+	font-family: Times New Roman, serif;
+	width: 960px;
+	margin: auto;
+}
+
+a { text-decoration: none; }
+
+img { border: 0; }
+
+#title { 
+	font-family: 'Bilbo Swash Caps', cursive; 
+	width: 300px;
+	height: 150px;
+	position: absolute;
+	top: 25px;
+	right: 100px;
+	font-size: 40px;
+	font-weight: bold;
+	text-align: right;
+	line-height: 150px;
+}
+
+header { 
+	width: 960px; 
+	height: 150px; 
+	background-color: #fcdceb; 
+	position: relative;
+}
+
+nav { 
+	width:760px;
+	height: 80px;
+	padding: 0px 50px;
+	background-color: #1c1a1f;
+}
+
+#main {
+	width: 760px;
+	height: 520px;
+	padding: 0px 50px;
+	background-color: #ecebed;	
+}
+
+#content { width:960px; height:600px; }
+section { width: 760px; height: 600px; float:left; }
+
+aside {
+	width: 200px;
+	height: 600px;
+	background-color: #c5becc;	
+	float: right;	
+	position: relative;
+}
+
+#quick_menu {
+	width: 120px;
+	height: 200px;
+	background-color: white;
+	opacity : 0.4;	/*투명도*/
+	position: absolute;
+	top: 200px;
+	left: 40px;
+	border-radius: 15px;
+}
+
+footer {
+	width: 960px;
+	height: 100px;
+	background-color: #051526;
+	font-size: 20px;
+	font-weight: bold;
+	text-align: center;
+	line-height: 100px;
+	color: white;
+}
+
+.menu_item {
+	display: block;
+	width: 200px;
+	height: 80px;
+	float: left;
+	color: white;
+	text-align: center;
+	line-height: 80px;
+}
+
+.qmenu_item{
+	display: block;
+	width: 120px;
+	height: 60px;
+	float: left;
+	text-align: center;
+	line-height: 80px;
+}
+
+input { display: none; }
+
+#main > div { display:none; }
+#menu1:checked ~ section #main > #content1,
+#menu2:checked ~ section #main > #content2,
+#menu3:checked ~ section #main > #content3,
+#Quick1:checked ~ section #main > #content1,
+#Quick2:checked ~ section #main > #content2,
+#Quick3:checked ~ section #main > #content3 { display: block; }
+
+
+#menu1:checked ~ section label:nth-of-type(1) { background-color: #ecebed; color:#1c1a1f; }
+#menu2:checked ~ section label:nth-of-type(2) { background-color: #ecebed; color:#1c1a1f; }
+#menu3:checked ~ section label:nth-of-type(3) { background-color: #ecebed; color:#1c1a1f; }
+#Quick1:checked ~ aside #quick_menu label:nth-of-type(1) { color: red; font-size: 20px; }
+#Quick2:checked ~ aside #quick_menu label:nth-of-type(2) { color: red; font-size: 20px; }
+#Quick3:checked ~ aside #quick_menu label:nth-of-type(3) { color: red; font-size: 20px; }
+
+
+
+
+
+
+
+
+
+
+

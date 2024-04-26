@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        * {font: '맑은 고딕', Gothic, sans-serif; margin: 0; padding: 0;}
+        body { width: 960px; margin: 0 auto;}
+        #page-wrapper {
+            padding: 10px 20px;
+            margin-top: 40px;
+            background-color: white;
+        }
+        #main-header {
+            padding: 40px 50px;
+        }
+        #main-navigation {
+            height: 40px;
+            margin-bottom: 20px;
+            border-top: 1px solid #C9C9C9;
+            border-bottom: 1px solid #C9C9C9;
+        }
+        .outer-menu-item {
+            display: block;
+            height: 30px;
+            width: 80px;
+            padding: 5px 20px;
+            text-align: center;
+            line-height: 30px;
+            float: left;
+        }
+        .pull-right {
+            height: 26px;
+            padding: 7px;
+            float: right;
+        }
+
+        .pull-left {
+            height: 40px;
+            float: left;
+        }
+
+        #main-section {
+            width: 710px;
+            float: left;
+        }
+
+        #main-aside {
+            width: 200px;
+            float: right;
+        }
+
+        #content {
+            overflow: hidden;
+        }
+
+        .input-search {
+            display: block;
+            height: 24px;
+            width: 120px;
+            padding-left: 10px;
+            border: 1px solid #CCCCCC;
+            border-radius: 15px 0px 0px 15px;
+            float: left;
+        }
+        .input-search-submit {
+            display: block;
+            height: 26px;
+            width: 50px;
+            border: 1px solid #CCCCCC;
+            border-radius: 0px 15px 15px 0px;
+            outline: 0px;
+            float: right;
+        }
+        article {
+            padding: 0px 10px 20px 10px;
+            border-bottom: 1px solid #C9C9C9;
+        }
+        .article-header {
+            padding: 20px 0px;
+        }
+        .outer-menu-item:hover {background-color: black; color: white; }
+        
+        .input-search:focus {background-color: yellow; outline: 0;}
+        a {text-decoration: none;}
+        li {list-style: none;}
+        body { background-color: #E6E6E6;}
+        .master-title {font-size: 30px; color: #191919;}
+        .master-description{font-size: 15px; color: #383838;}
+        .article-title{font-size: 25px;}
+        .article-date{font-size: 13px;}
+        .article-body{font-size: 14px;}
+        .aside-list li a{font-size: 13px; color: orange;}
+        .aside-list h3{font-size: 15px; color: blue;}
+        
+
+    </style>
+</head>
+<body>
+    <div id="page-wrapper">
+        <header id="main-header">
+            <h1 class="master-title">웹 프로그래밍 완전 정복</h1>
+            <h2 class="master-description">건국대학교 컴퓨터공학부</h2>
+        </header>
+        <nav id="main-navigation">
+            <div class="pull-left">
+                <ul class="outer-menu">
+                    <li class="outer-menu-item">HTML5</li>
+                    <li class="outer-menu-item">CSS3</li>
+                    <li class="outer-menu-item">JavaScript</li>
+                </ul>
+            </div>
+            <div class="pull-right">
+                <form>
+                    <input type="text" class="input-search">
+                    <input type="submit" class="input-search-submit" value="검색">
+                </form>
+            </div>
+        </nav>
+        <div id="content">
+            <section id="main-section">
+                <article>
+                    <div class="article-header">
+                        <h1 class="article-title">배고프다</h1>
+                        <p class="article-date">2024.03.14</p>
+                    </div>
+                    <div class="article-body">
+                        <img src="https://via.placeholder.com/430x280" width="430" height="280">
+                        <p>하이하이하이하이</p>
+                    </div>
+                </article>
+                <article>
+                    <div class="article-header">
+                        <h1 class="article-title">집가고싶다</h1>
+                        <p class="article-date">2024.03.15</p>
+                    </div>
+                    <div class="article-body">
+                        <img src="https://via.placeholder.com/430x280" width="430" height="280">
+                        <p>asndkwbdowbdoaw22dashdjksahdjkahdjkwhduhasudwkdbaksjdbiuqoㅁㄴ아ㅠ어ㅏㅁ뉴아ㅓㅠ장뮤장머ㅏ조어</p>
+                    </div>
+                </article>
+            </section>
+            <aside id="main-aside">
+                <div class="aside-list">
+                    <h3>카테고리</h3>
+                    <ul>
+                        <li><a href="#">데이터</a></li>
+                        <li><a href="#">데이터</a></li>
+                        <li><a href="#">데이터</a></li>
+                        <li><a href="#">데이터</a></li>
+                        <li><a href="#">데이터</a></li>
+                    </ul>
+                </div>
+                <div class="aside-list">
+                    <h3>최근 글</h3>
+                    <ul>
+                        <li><a href="#">데이터</a></li>
+                        <li><a href="#">데이터</a></li>
+                        <li><a href="#">데이터</a></li>
+                        <li><a href="#">데이터</a></li>
+                        <li><a href="#">데이터</a></li>
+                    </ul>
+                </div>
+            </aside>
+        </div>
+        <footer id="main-footer">
+            <a href="#">Created by SeokJin Kim</a>
+        </footer>
+    </div>
+</body>
+</html>

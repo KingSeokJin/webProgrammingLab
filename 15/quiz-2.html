@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>연습문제 2</title>
+</head>
+<body>
+	<script>
+		x = parseInt(prompt("비교할 첫 번째 숫자"));
+		y = parseInt(prompt("비교할 두 번째 숫자"));
+		
+		(function(n1, n2){
+			if(n1 > n2){
+				prompt(n1 +"이 "+n2 + "보다 큽니다");
+			}
+			else if( n1 === n2){
+				prompt(n1 +"과 " +n2 +"는 같습니다.")
+			}
+			else{
+				prompt(n2 +"이 "+n1 + "보다 큽니다");
+			}
+		}(x, y));
+	</script>
+</body>
+</html>

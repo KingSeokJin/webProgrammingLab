@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+		table, th, td {
+			border: 1px solid black;
+			border-collapse: collapse;
+		}
+		td {
+			width: 100px;
+			text-align: center;
+		}
+
+        #letpull, #salele, #movie {
+            background-color: antiquewhite;
+        }
+	</style>
+</head>
+<body>
+    <table>
+        <tr>
+            <th>시간/요일</th>
+            <th>월</th>
+            <th>화</th>
+            <th>수</th>
+            <th>목</th>
+            <th>금</th>
+        </tr>
+        <tr>
+            <th>9:00-9:30</th>
+            <td rowspan="3" id="letpull">렛풀다운</td>
+            <td></td>
+            <td rowspan="2" id="salele">사레레</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <th>9:30-10:00</th>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <th>10:00-10:30</th>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <th>10:30-11:00</th>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <th>11:00-11:30</th>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <th>11:30-12:00</th>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td colspan="2" id="movie">영화시청</td>
+        </tr>
+        <tr>
+            <th>12:00-12:30</th>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <th>12:30-13:00</th>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+
+    <table>
+        <tr>
+            <td>섭씨온도</td>
+            <td>화씨온도</td>
+        </tr>
+        <script>
+            for(cel = 0; cel <=10; cel++){
+                document.write("<tr><td>" + cel + "</td>"+"<td>" + ((cel * 9.0 / 5)+ 32) + "</td></tr>");
+            }
+        </script>
+    </table>
+
+    <div id="clock">
+    </div>
+    <script>
+        function setClock() {
+        var now = new Date();
+        var s = now.getHours() + ':' + now.getMinutes() + ':' + now.getSeconds();
+        document.getElementById('clock').innerHTML = s;
+        setTimeout('setClock()', 1000); // setTimeout(setClock, 1000); 
+        }
+        setClock();
+       </script>
+</body>
+</html>

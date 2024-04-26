@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8"/>
+    <style>
+		table, th, td {
+			border: 1px solid black;
+			border-collapse: collapse;
+		}
+		td {
+			width: 100px;
+		}
+	</style>
+    <script>
+        function show() {
+            var form = document.myform;
+            var id = form["id"].value;
+            var name = form["name"].value;
+            var gender = form["gender"].value;
+            var cell = form["first-number"].value + form["second-number"].value + form["last-number"].value;
+            var address = form["address"].value;
+            var hobby="";
+            for(var i=1; i<=4; i++){
+                if(form["hobby"+i].checked) {
+                    hobby += form["hobby"+i].value + "";
+                }
+            }
+            if(id.length == 0) {
+                alert("id 필드가 비어있네요!");
+                return false;
+            }
+            var str = id + "\n" + name + "\n" + gender + "\n";
+            str += cell + "\n" + address + "\n" + hobby;
+            alert(str);
+        }
+    </script>
+</head>
+<body>
+    <h1>회원가입</h1>
+    <form action="myform.js" method="post" name="myform">
+        <table>
+            <tr>
+                <th>아이디:</th>
+                <td><input type="text" maxlength="12" name="id" size="15"></td>
+            </tr>
+            <tr>
+                <th>이름:</th>
+                <td><input type="text" maxlength="12" name="name" size="15"></td>
+            </tr>
+            <tr>
+                <th>비밀번호:</th>
+                <td><input type="password" maxlength="10" name="pass" size="15"></td>
+            </tr>
+            <tr>
+                <th>성별:</th>
+                <td>
+                    <input type="radio" name="gender" value="male" checked>남성
+                    <input type="radio" name="gender" value="female">여성
+                </td>
+            </tr>
+            <tr>
+                <th>휴대전화:</th>
+                <td>
+                    <select name="first-number">
+                        <option value="cel010">010</option>
+                        <option value="cel011">011</option>
+                        <option value="cel016">016</option>
+                        <option value="cel017">017</option>
+                        <option value="cel070">070</option>
+                    </select>   
+                    <input type="text" name="second-number" size="4" maxlength="4">
+                    <input type="text" name="last-number" size="4" maxlength="4">
+            </td>
+            </tr>
+            <tr>
+                <th>주소:</th>
+                <td><input type="text" name = "address" maxlength="15" size="20"></td>
+            </tr>
+            <tr>
+                <th>취미:</th>
+                <td><input type="checkbox" name="hobby1" value="reading">책
+                <input type="checkbox" name="hobby2" value="baseball">야구
+                <input type="checkbox" name="hobby3" value="soccer">축구
+                <input type="checkbox" name="hobby4" value="gym">헬스
+            </td>
+            </tr>
+            <tr>
+                <th>자기소개:</th>
+                <td>
+                    <textarea name="self-introduce" rows="5" cols="60"></textarea>
+                </td>
+            </tr>
+        </table>
+        <input type="button" value="회원가입" onclick="show();">
+        <input type="reset" value="다시작성">
+    </form>
+</body>
+</html>
