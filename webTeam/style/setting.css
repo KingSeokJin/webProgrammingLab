@@ -1,0 +1,150 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#main {
+  width: 450px;
+  height: 600px;
+  overflow: hidden;
+  position: relative;
+}
+#main > img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 600px;
+  width: 450px;
+  z-index: 0;
+}
+
+#setting-title {
+  position: relative;
+  z-index: 1;
+  top: 15px;
+  left: 10%;
+  height: 20px;
+  font-size: 60px;
+  color: white;
+  text-decoration: dotted;
+  font-family: "Micro 5", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  text-shadow: -5px 0px black, 0px 5px black, 5px 0px black, 0px -5px black;
+}
+
+#setting-wrap {
+  position: absolute;
+  z-index: 1;
+  top: 130px;
+  left: 10%;
+  width: 350px;
+  height: 400px;
+  background-color: rgb(49, 49, 49);
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+.setting-main {
+  width: 350px;
+  height: 400px;
+  display: none;
+}
+body > input {
+  display: none;
+}
+#setting-wrap > label {
+  font-family: "Micro 5", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 23px;
+  position: absolute;
+  display: block;
+  width: 100px;
+  height: 30px;
+  top: -30px;
+  background-color: rgb(49, 49, 49);
+  color: #1a120b;
+  text-align: center;
+  line-height: 30px;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+  transition: width 0.3s, height 0.3s, font-size 0.3s, top 0.3s;
+}
+
+#setting-wrap > label:nth-of-type(1) {
+  left: 0;
+}
+
+#setting-wrap > label:nth-of-type(2) {
+  left: 125px;
+}
+
+#paddle:checked ~ #main > #setting-wrap > label:nth-of-type(1),
+#ball:checked ~ #main > #setting-wrap > label:nth-of-type(2) {
+  width: 120px;
+  height: 40px;
+  top: -40px;
+  line-height: 40px;
+  font-size: 30px;
+  color: white;
+}
+#paddle:checked ~ #main > #setting-wrap > .setting-main:nth-of-type(1),
+#paddle:checked ~ #main > #setting-wrap > .setting-main:nth-of-type(2) {
+  display: block;
+}
+
+.setting-main > p {
+  padding-top: 20px;
+  padding-left: 15px;
+  font-family: "Micro 5", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 40px;
+  color: white;
+}
+#color-wrap {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 58px;
+}
+.color-label {
+  display: block;
+  width: 30px;
+  height: 30px;
+  border-radius: 15px;
+  z-index: 1;
+  background-size: cover; /* Ensure the image covers the label */
+  background-position: center; /* Center the background image */
+}
+
+.color-label:nth-child(1) {
+  background-image: url("../img/colordiv1.png");
+}
+.color-label:nth-child(2) {
+  background-image: url("../img/colordiv2.png");
+}
+.color-label:nth-child(3) {
+  background-image: url("../img/colordiv3.png");
+}
+.color-label:nth-child(4) {
+  background-image: url("../img/colordiv4.png");
+}
+.color-label:nth-of-type(16) {
+  background-image: url("../img/colordiv5.png");
+}

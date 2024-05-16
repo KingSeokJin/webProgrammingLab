@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link type="text/css" rel="stylesheet" href="everyblock.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="everyblock.js"></script>
+    <title>EVERYBLOCK</title>
+</head>
+<body>
+    <iframe src="sound/silence.mp3" allow="autoplay" id="audio" style="display:none"></iframe>
+    <audio autoplay loop id="bgmAudio">
+        <source src="sound/gameover.mp3" type="audio/mp3" />
+    </audio>
+
+    <div id="main-screen">
+        <div class="sidebar" id="left-bar">
+            <div class="profile">
+                <img id="profileImg" src="img/profile.png">
+                <p id="profileName"></p>
+                <p id="profileSem"></p>
+                <p id="profileScore"></p>
+            </div>
+            <div class="left-btn">
+                <div id="everytimelogodiv"><!-- 이미지 로고 홈페이지로 -->
+                    <img id="schoolhome" class="everytimelogo" src="img/link_school.png" >
+                    <img id="infosystem" class="everytimelogo" src="img/link_web.png" >
+                    <img id="gongji" class="everytimelogo" src="img/link_notice.png" >
+                    <br>
+                    <img id="calender" class="everytimelogo" src="img/link_schedule.png" >
+                    <img id="library" class="everytimelogo" src="img/link_library.png" >
+                    <img id="webmail" class="everytimelogo" src="img/link_web.png" >  
+                </div>
+                <img class= "leftimg" id="goMainBtn" src="img/mainbtn.png">
+                <img class= "leftimg" id="stopBtn" src="img/pausebtn.png">
+                <img class= "leftimg" id="continueBtn" src="img/continuebtn.png">
+            </div>
+        </div>
+        <div class="sidebar" id="right-bar">
+            <div class="time" id='timeFull'></div>
+            <div class="time" id='timeEmpty'></div>
+            <div class="it-board"></div>
+        </div>
+
+        <div id="main-content">
+            <audio src="sound/break.mp3" autoplay id="effectSound"></audio>
+            <div class="content" id="main-menu">
+                <img id="main-title" src="img/logo.png">
+                <img class="main-btn" id="gamebtn" src="img/gamebtn.png">
+                <img class="main-btn" id="htpbtn" src="img/htpbtn.png">
+                <img class="main-btn" id="scorebtn" src="img/scorebtn.png">
+                <img class="main-btn" id="setbtn" src="img/setbtn.png">
+            </div>
+
+            <div class="content" id="difficulty">
+                <div class="naming">
+                    <div class="search-wrapper">
+                        <div class="input-holder">
+                          <input type="text" maxlength="5" id="username" class="search-input"  placeholder="이름을 입력해 주세요.(최대 5글자)" />
+                          <button id="open" class="search-icon search-toggle"></button>
+                        </div>
+                        <span class="close search-toggle"></span>
+                        <div class="search-result"></div>
+                    </div>
+                </div>
+                <p id="guide">버튼을 누르고, 이름을 검색하세요!</p>
+                <div id="DIF">
+                    <div id="difContainer">
+                        <div id="Container">   
+                            <div class="dif" id="fir">1학년</div>
+                            <div class="difInfo" id="firInfo"></div>
+                        </div>
+                        <div id="Container"> 
+                            <div class="dif" id="sec">2학년</div>
+                            <div class="difInfo" id="secInfo"></div>
+                        </div>
+                        <div id="Container"> 
+                            <div class="dif" id="thi">3학년</div>
+                            <div class="difInfo" id="thiInfo"></div> 
+                        </div>
+                        <div id="Container"> 
+                            <div class="dif" id="for">4학년</div>
+                            <div class="difInfo" id="forInfo"></div>
+                        </div>
+                    </div>
+                </div>
+                <div id="dif_home">메인화면</div>
+            </div>
+
+            <div class="content" id="game-menu">
+                <img id="playBtn" src="img/blockbreakstart.png">
+                <canvas id="myCanvas" width="800px" height="700px"></canvas>
+                <div id="stressFull"></div>
+                <div id="stressEmpty"><div id="stressName">&nbspSTRESS</div></div>
+                <div id="feverFull"></div>
+                <div id="feverEmpty"><div id="feverName">&nbspFEVER</div></div>
+            </div>
+
+            <div id="result">
+            </div>
+
+            <div class="content" id="howtoplay-menu">
+                <img id="htp-title" src="img/htp-title.png">
+                <div class="gomain">메인화면</div> 
+                <div id="htp_pic">
+                    <img id="htpAlbum" src="img/htp1.png">
+                </div>
+            </div>
+
+            <div class="content" id="score-menu">
+                <img id="score-title" src="img/ranking_title.png">
+                <div class="gomain">메인화면</div>    
+                <div id="tableDiv">
+                    <table id="score-table">
+                        <tr>
+                            <th class="score-item">순위</th>
+                            <th id="name">이름</th>
+                            <th class="score-item">1학년</th>
+                            <th class="score-item">2학년</th>
+                            <th class="score-item">3학년</th>
+                            <th class="score-item">4학년</th>
+                            <th class="score-item">총점</th>
+                            <th class="score-item">학점</th>
+                        </tr>
+                        <tbody id="score-body"></tbody>
+                    </table>
+                </div>       
+            </div>
+
+            <div id="set-menu" class="content">
+                 <img src='img/setting_title.png' id="opt_title">
+                <div class="opt" id="opt_1">
+                    <div class="opt_text">게 임 테 마</div>
+                    <div class="opt_choice" id="theme">
+                        <img src="img/daybtn.png" class="theme_img" id="theme1">
+                        <img src="img/darkbtn.png" class="theme_img" id="theme2">
+                    </div>
+                </div>
+                <div class="opt" id="opt_2">
+                    <div class="opt_text">음 악</div>
+                    <div class="opt_choice" id="sound">
+                        <audio src="sound/bgm1.mp3" autoplay loop=true id="opt_audio"></audio>
+                        <input type="range" id="slider" min="0" max="100">
+                        <img src="img/musicbtn.png" class="sound_img" id="sound1">
+                        <img src="img/musicbtn.png" class="sound_img" id="sound2">
+                        <img src="img/musicbtn.png" class="sound_img" id="sound3">
+                        <img src="img/mute.png" id="mute">
+                    </div>
+                </div>
+                 <div class="opt" id="opt_3">
+                    <div class="opt_text">공 / 패들 색</div>
+                    <canvas id="setCanvas" width="480px" height="84px"></canvas>
+                    <div class="opt_choice" id="change_color">
+                        공 색상: <input type="color" id="myballcolor"><br/><br/>
+                        패들 색상: <input type="color" id="mypaddlecolor">
+                    </div>
+                </div>
+                <div class="gomain">메인화면</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

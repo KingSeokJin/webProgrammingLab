@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+ <div class="out" style="background-color:yellow;width:400px;">
+ <p>마우스를 여기로 움직이세요.</p>
+ <p>0</p>
+ </div>
+ <script>
+ var i = 0;
+ $("div.out").mouseenter(function () {
+ $("p:first").text("mouse over");
+ $("p:last").text(++i);
+ })
+ </script>
+</body>
+</html>

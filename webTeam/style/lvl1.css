@@ -1,0 +1,42 @@
+body {
+    display: block;
+    height: 100vh;
+    font-family: "Monospace", sans-serif;
+    background-image: url('minecraftbg1.jpeg'); 
+    background-size: cover;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    display: relative;
+    width: auto;
+    padding-top: 20px;
+    text-align: center;
+    justify-content: center;
+}
+#master_title {
+    color: #fff;
+    font-size: 2.2em;
+    background-color: rgba(128, 128, 128, 1);
+    border-radius: 10px;
+}
+
+#game-container {
+    position: relative;
+    width: 1000px;
+    height: 650px;
+    border: 1px solid #fff;
+    color: #fff;
+}
+
+#gameCanvas {
+    margin: auto;
+    border-radius: 5px;
+    background-color: transparent;
+    opacity: 0.8;
+}
+
